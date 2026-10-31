@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Статистика — Степной Beat</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Golos+Text:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Тёмная панель в цветах сайта; один цвет данных (#c07a22 проверен валидатором на тёмном фоне) */
+:root{--bg:#140c07;--surface:#1a1009;--line:rgba(255,213,141,.16);--ink:#fff1d6;--ink2:#f3dcae;--muted:#bfa47c;--gold:#ffd58d;--bar:#c07a22;--bar-hi:#e09a3e;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink2);font:400 15px/1.5 "Golos Text",system-ui,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:24px max(16px,env(safe-area-inset-right,0px)) 48px max(16px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:20px}
+h1,h2{font-family:"Unbounded","Arial Black",sans-serif;color:var(--ink);margin:0;line-height:1.2}
+h1{font-size:clamp(22px,4vw,30px)}
+h2{font-size:15px;font-weight:500;letter-spacing:.04em}
+a{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;min-width:0}
+.login{max-width:420px;display:flex;flex-direction:column;gap:12px}
+label{font-weight:500;color:var(--ink)}
+input[type=password]{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:#0f0905;color:var(--ink);font:inherit}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+button{font:inherit;cursor:pointer}
+.btn{padding:11px 18px;border-radius:99px;border:0;background:linear-gradient(100deg,#f0a24a,#ffd58d);color:#2a1608;font-weight:500}
+.seg{display:inline-flex;padding:4px;border-radius:99px;border:1px solid var(--line);background:var(--surface)}
+.seg button{border:0;background:none;color:var(--ink2);padding:7px 14px;border-radius:99px}
+.seg button[aria-pressed="true"]{background:var(--gold);color:#2a1608}
+.ghost{border:1px solid var(--line);background:none;color:var(--ink2);padding:8px 14px;border-radius:99px}
+.err{color:#ff9b8a;margin:0}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.tile .v{font:800 clamp(24px,4vw,34px)/1.1 "Unbounded",sans-serif;color:var(--ink);font-variant-numeric:tabular-nums}
+.tile .l{color:var(--muted);font-size:14px}
+.chart{position:relative;margin-top:12px}
+.chart svg{display:block;width:100%;height:220px;overflow:visible}
+.chart .grid line{stroke:rgba(255,213,141,.08)}
+.chart .axis text{fill:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
+.chart .b{fill:var(--bar)}
+.chart g.hit:hover .b,.chart g.hit:focus .b{fill:var(--bar-hi)}
+.chart g.hit{outline:none}
+.tip{position:absolute;pointer-events:none;padding:8px 10px;border-radius:8px;background:#0f0905;border:1px solid var(--line);color:var(--ink);font-size:13px;white-space:nowrap;transform:translate(-50%,-100%);opacity:0;transition:opacity .12s}
+.tip.on{opacity:1}
+.tip b{font-variant-numeric:tabular-nums}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.list{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+.list li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:baseline}
+.list .name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink2)}
+.list .num{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:500}
+.list .track{grid-column:1/-1;height:6px;border-radius:3px;background:rgba(255,213,141,.07)}
+.list .fill{height:100%;border-radius:3px;background:var(--bar)}
+.empty{color:var(--muted);margin:12px 0 0}
+details summary{cursor:pointer;color:var(--muted);margin-top:10px}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-weight:500}
+.note{color:var(--muted);font-size:13px;margin:0}
+[hidden]{display:none!important}
+@media (max-width:760px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="top">
+    <h1>Статистика сайта</h1>
+    <a href="/">← На сайт</a>
+  </header>
+
+  <form class="card login" id="login">
+    <label for="pw">Пароль от статистики</label>
+    <input type="password" id="pw" autocomplete="current-password" required>
+    <label class="row" style="font-weight:400"><input type="checkbox" id="remember" checked> Запомнить на этом устройстве</label>
+    <div class="row"><button class="btn" type="submit">Открыть</button></div>
+    <p class="err" id="err" role="alert" hidden></p>
+  </form>
+
+  <div id="dash" hidden>
+    <div class="row" style="justify-content:space-between">
+      <div class="seg" role="group" aria-label="Период">
+        <button type="button" data-d="7" aria-pressed="false">7 дней</button>
+        <button type="button" data-d="30" aria-pressed="true">30 дней</button>
+        <button type="button" data-d="90" aria-pressed="false">90 дней</button>
+      </div>
+      <button type="button" class="ghost" id="logout">Выйти</button>
+    </div>
+    <div class="tiles" style="margin-top:16px">
+      <div class="card tile"><div class="v" id="kVisits">—</div><div class="l">визитов</div></div>
+      <div class="card tile"><div class="v" id="kViews">—</div><div class="l">просмотров страниц</div></div>
+      <div class="card tile"><div class="v" id="kClicks">—</div><div class="l">нажатий на кнопки</div></div>
+      <div class="card tile"><div class="v" id="kMobile">—</div><div class="l">визитов с телефона</div></div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <h2>Визиты по дням</h2>
+      <div class="chart" id="chart"><div class="tip" id="tip" aria-hidden="true"></div></div>
+      <details><summary>Таблица по дням</summary><table id="dayTable"><thead><tr><th>Дата</th><th>Визиты</th><th>Просмотры</th></tr></thead><tbody></tbody></table></details>
+    </div>
+    <div class="grid2" style="margin-top:12px">
+      <div class="card"><h2>Популярные страницы</h2><ul class="list" id="lPages"></ul></div>
+      <div class="card"><h2>Что нажимают</h2><ul class="list" id="lClicks"></ul></div>
+      <div class="card"><h2>Откуда приходят</h2><ul class="list" id="lRefs"></ul></div>
+      <div class="card"><h2>Страны</h2><ul class="list" id="lCountries"></ul></div>
+    </div>
+    <p class="note" style="margin-top:12px">Визит — один заход на сайт (несколько страниц за раз считаются одним визитом). Личные данные не собираются: только страна, тип устройства и сайт, с которого пришли. Данные обновляются сразу.</p>
+  </div>
+</main>
+
+<script>
+(function () {
+  var KEY = 'statsKey', days = 30, titles = {}, pw = '';
+  try { pw = localStorage.getItem(KEY) || sessionStorage.getItem(KEY) || ''; } catch (e) {}
+  var $ = function (id) { return document.getElementById(id); };
+  var nf = new Intl.NumberFormat('ru');
+  var countryName = (function () { try { var dn = new Intl.DisplayNames(['ru'], { type: 'region' }); return function (c) { return c === 'XX' ? 'Неизвестно' : (dn.of(c) || c); }; } catch (e) { return function (c) { return c; }; } })();
+  var PLATFORMS = { youtube: 'YouTube', 'youtube-music': 'YouTube Music', spotify: 'Spotify', 'apple-music': 'Apple Music', deezer: 'Deezer', tidal: 'Tidal', 'amazon-music': 'Amazon Music', qobuz: 'Qobuz', anghami: 'Anghami', boomplay: 'Boomplay', tiktok: 'TikTok' };
+  function clickLabel(n) {
+    if (n === 'hero-ytmusic') return '«Слушать на YouTube Music» — первый экран';
+    if (n === 'hero-all') return '«Все площадки» — первый экран';
+    if (n === 'subscribe-youtube') return '«Подписаться на YouTube»';
+    if (n === 'modal-spotify') return '«Открыть в Spotify» — окно релиза';
+    if (n === 'release-ytmusic') return 'YouTube Music — со страницы релиза';
+    if (n.indexOf('listen-') === 0) return 'Площадка: ' + (PLATFORMS[n.slice(7)] || n.slice(7));
+    if (n.indexOf('release-spotify-') === 0) return 'Spotify — «' + (titles[n.slice(16)] || n.slice(16)) + '»';
+    return n;
+  }
+  function pageLabel(p) {
+    if (p === '/') return 'Главная';
+    if (p === '/en/') return 'Главная (English)';
+    var m = p.match(/^(\/en)?\/release\/([a-z0-9-]+)\/$/);
+    if (m) return '«' + (titles[m[2]] || m[2]) + '»' + (m[1] ? ' (English)' : '');
+    return p;
+  }
+  function list(el, obj, label, extra) {
+    var rows = Object.keys(obj).map(function (k) { return [k, obj[k]]; });
+    if (extra) rows.push(extra);
+    rows.sort(function (a, b) { return b[1] - a[1]; });
+    rows = rows.slice(0, 10);
+    var max = rows.length ? rows[0][1] : 0;
+    el.innerHTML = rows.length ? rows.map(function (r) {
+      var name = label ? label(r[0]) : r[0];
+      return '<li><span class="name" title="' + name.replace(/"/g, '&quot;') + '">' + name + '</span><span class="num">' + nf.format(r[1]) + '</span><span class="track" aria-hidden="true"><span class="fill" style="width:' + (max ? Math.max(2, r[1] / max * 100) : 0) + '%"></span></span></li>';
+    }).join('') : '<li class="empty">Пока нет данных</li>';
+  }
+  function sum(o) { var s = 0; for (var k in o) s += o[k]; return s; }
+  function fmtDate(d, long) { var x = new Date(d + 'T00:00:00Z'); return x.toLocaleDateString('ru', long ? { day: 'numeric', month: 'long', timeZone: 'UTC' } : { day: 'numeric', month: 'short', timeZone: 'UTC' }); }
+
+  function chart(daily) {
+    var box = $('chart'), tip = $('tip');
+    var old = box.querySelector('svg'); if (old) old.remove();
+    var W = box.clientWidth || 600, H = 220, pl = 34, pb = 22, pt = 8;
+    var max = Math.max(1, Math.max.apply(null, daily.map(function (d) { return d.visits; })));
+    var step = Math.max(1, Math.ceil(max / 4)); var top = step * 4;
+    var bw = (W - pl) / daily.length, gap = Math.min(2, bw * 0.2);
+    var y = function (v) { return pt + (H - pt - pb) * (1 - v / top); };
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Визиты по дням, столбчатая диаграмма"><g class="grid">';
+    for (var i = 0; i <= 4; i++) svg += '<line x1="' + pl + '" x2="' + W + '" y1="' + y(step * i) + '" y2="' + y(step * i) + '"/>';
+    svg += '</g><g class="axis">';
+    for (i = 0; i <= 4; i++) svg += '<text x="' + (pl - 6) + '" y="' + (y(step * i) + 4) + '" text-anchor="end">' + nf.format(step * i) + '</text>';
+    var every = Math.ceil(daily.length / (W < 500 ? 4 : 7)), lastJ = daily.length - 1;
+    daily.forEach(function (d, j) { if ((j % every === 0 && lastJ - j >= every * 0.6) || j === lastJ) svg += '<text x="' + (pl + bw * j + bw / 2) + '" y="' + (H - 4) + '" text-anchor="middle">' + fmtDate(d.date) + '</text>'; });
+    svg += '</g>';
+    daily.forEach(function (d, j) {
+      var x = pl + bw * j + gap / 2, w = Math.max(1, bw - gap), h = Math.max(0, y(0) - y(d.visits)), r = Math.min(4, w / 2, h);
+      var path = h > 0 ? 'M' + x + ',' + y(0) + 'V' + (y(0) - h + r) + 'q0,-' + r + ' ' + r + ',-' + r + 'h' + (w - 2 * r) + 'q' + r + ',0 ' + r + ',' + r + 'V' + y(0) + 'Z' : '';
+      svg += '<g class="hit" role="img" tabindex="0" data-j="' + j + '" aria-label="' + fmtDate(d.date, true) + ': ' + d.visits + ' визитов, ' + d.views + ' просмотров"><rect x="' + (pl + bw * j) + '" y="' + pt + '" width="' + bw + '" height="' + (H - pt - pb) + '" fill="transparent"/>' + (path ? '<path class="b" d="' + path + '" fill="var(--bar)"/>' : '') + '</g>';
+    });
+    svg += '</svg>';
+    box.insertAdjacentHTML('afterbegin', svg);
+    var showTip = function (g) {
+      var d = daily[+g.getAttribute('data-j')], j = +g.getAttribute('data-j');
+      tip.innerHTML = fmtDate(d.date, true) + '<br>Визиты: <b>' + nf.format(d.visits) + '</b> · Просмотры: <b>' + nf.format(d.views) + '</b>';
+      var sx = box.clientWidth / W;
+      tip.style.left = Math.min(box.clientWidth - 90, Math.max(90, (pl + bw * j + bw / 2) * sx)) + 'px';
+      tip.style.top = Math.max(0, y(d.visits) * sx - 8) + 'px';
+      tip.classList.add('on');
+    };
+    box.querySelectorAll('g.hit').forEach(function (g) {
+      g.addEventListener('mouseenter', function () { showTip(g); });
+      g.addEventListener('focus', function () { showTip(g); });
+      g.addEventListener('mouseleave', function () { tip.classList.remove('on'); });
+      g.addEventListener('blur', function () { tip.classList.remove('on'); });
+    });
+    $('dayTable').tBodies[0].innerHTML = daily.slice().reverse().map(function (d) { return '<tr><td>' + fmtDate(d.date, true) + '</td><td>' + d.visits + '</td><td>' + d.views + '</td></tr>'; }).join('');
+  }
+
+  var last = null;
+  function render(s) {
+    last = s;
+    var visits = 0, views = 0;
+    s.daily.forEach(function (d) { visits += d.visits; views += d.views; });
+    $('kVisits').textContent = nf.format(visits);
+    $('kViews').textContent = nf.format(views);
+    $('kClicks').textContent = nf.format(sum(s.clicks));
+    $('kMobile').textContent = visits ? Math.round((s.devices.m || 0) / visits * 100) + '%' : '—';
+    chart(s.daily);
+    list($('lPages'), s.pages, pageLabel);
+    list($('lClicks'), s.clicks, clickLabel);
+    var direct = visits - sum(s.refs);
+    list($('lRefs'), s.refs, null, direct > 0 ? ['Прямые заходы и закладки', direct] : null);
+    list($('lCountries'), s.countries, countryName);
+  }
+  addEventListener('resize', function () { if (last) chart(last.daily); });
+
+  function load() {
+    return fetch('/api/stats?days=' + days, { headers: { 'x-stats-key': pw } }).then(function (r) {
+      if (r.status === 401) throw new Error('auth');
+      if (!r.ok) throw new Error('http');
+      return r.json();
+    }).then(function (s) { $('login').hidden = true; $('dash').hidden = false; render(s); });
+  }
+  function fail(e) {
+    $('login').hidden = false; $('dash').hidden = true;
+    $('err').textContent = e.message === 'auth' ? 'Неверный пароль. Проверьте и попробуйте ещё раз.' : 'Не удалось загрузить статистику. Обновите страницу через минуту.';
+    $('err').hidden = false;
+  }
+  fetch('/stats/titles.json').then(function (r) { return r.json(); }).then(function (t) { titles = t; if (last) render(last); }).catch(function () {});
+
+  $('login').addEventListener('submit', function (e) {
+    e.preventDefault();
+    pw = $('pw').value.trim();
+    try { ($('remember').checked ? localStorage : sessionStorage).setItem(KEY, pw); } catch (er) {}
+    load().catch(fail);
+  });
+  document.querySelectorAll('.seg button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      days = +b.getAttribute('data-d');
+      document.querySelectorAll('.seg button').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+      load().catch(fail);
+    });
+  });
+  $('logout').addEventListener('click', function () {
+    try { localStorage.removeItem(KEY); sessionStorage.removeItem(KEY); } catch (e) {}
+    pw = ''; $('pw').value = ''; $('dash').hidden = true; $('login').hidden = false; $('err').hidden = true;
+  });
+  if (pw) load().catch(function (e) { if (e.message !== 'auth') fail(e); });
+})();
+</script>
+</body>
+</html>

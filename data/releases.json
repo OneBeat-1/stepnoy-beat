@@ -1,0 +1,618 @@
+[
+ {
+  "title": "За туманом",
+  "spotify_id": "36Qj7xssbvu80NZHOwqkSn",
+  "type": "single",
+  "explicit": false,
+  "slug": "za-tumanom"
+ },
+ {
+  "title": "Разгоню руками тучи",
+  "spotify_id": "4wxfrhVWglw3stchFlslGp",
+  "type": "single",
+  "explicit": false,
+  "slug": "razgonyu-rukami-tuchi"
+ },
+ {
+  "title": "Журавли",
+  "spotify_id": "11vryBd4BNW7T99DhWbgev",
+  "type": "single",
+  "explicit": false,
+  "slug": "zhuravli"
+ },
+ {
+  "title": "BOOM!",
+  "spotify_id": "6fedlzXK6PyEfgrW8akt82",
+  "type": "single",
+  "explicit": false,
+  "slug": "boom"
+ },
+ {
+  "title": "Уносит ночь",
+  "spotify_id": "2VHh04vXDuzUAffIvEAfBq",
+  "type": "single",
+  "explicit": true,
+  "slug": "unosit-noch"
+ },
+ {
+  "title": "Гуляй, душа! (Remix)",
+  "spotify_id": "5JPJTaNzEq9YJ99zeVMI0h",
+  "type": "remix",
+  "explicit": false,
+  "slug": "gulyay-dusha-remix"
+ },
+ {
+  "title": "Оставайся собой",
+  "spotify_id": "5dV02GXJXG62gxOzcu374R",
+  "type": "single",
+  "explicit": false,
+  "slug": "ostavaysya-soboy"
+ },
+ {
+  "title": "Платье белое надела",
+  "spotify_id": "3UVYvxt2o4i2DK0YnahLLW",
+  "type": "single",
+  "explicit": false,
+  "slug": "plate-beloe-nadela"
+ },
+ {
+  "title": "Не ври, девчонка",
+  "spotify_id": "60m33PuKH5G2lEAkdmaq7I",
+  "type": "single",
+  "explicit": false,
+  "slug": "ne-vri-devchonka"
+ },
+ {
+  "title": "Dark Tulpar",
+  "spotify_id": "71SneyFJ65xEKdER8SRiKl",
+  "type": "single",
+  "explicit": false,
+  "slug": "dark-tulpar"
+ },
+ {
+  "title": "Нас тянула высота",
+  "spotify_id": "5ZJYY1gWI0ps0WJQWq9fan",
+  "type": "single",
+  "explicit": false,
+  "slug": "nas-tyanula-vysota"
+ },
+ {
+  "title": "Дикая роза",
+  "spotify_id": "4KR0brQO1XFLjP9sEoXG25",
+  "type": "single",
+  "explicit": false,
+  "slug": "dikaya-roza"
+ },
+ {
+  "title": "Жизнь как Slow Mo",
+  "spotify_id": "4hL403mHfzv9Xc3vdzSpYW",
+  "type": "single",
+  "explicit": false,
+  "slug": "zhizn-kak-slow-mo"
+ },
+ {
+  "title": "Туда, где горы",
+  "spotify_id": "3ol6rmg7wImiTNapNYv9mX",
+  "type": "single",
+  "explicit": false,
+  "slug": "tuda-gde-gory"
+ },
+ {
+  "title": "Гори, моя звезда",
+  "spotify_id": "48N1No7NvHQNSxCvUti2dK",
+  "type": "single",
+  "explicit": false,
+  "slug": "gori-moya-zvezda"
+ },
+ {
+  "title": "Караван не спит",
+  "spotify_id": "21CbBHi9GTUI3X3gtKurof",
+  "type": "single",
+  "explicit": false,
+  "slug": "karavan-ne-spit"
+ },
+ {
+  "title": "50 оттенков розового",
+  "spotify_id": "0dMfxAAA7SPvndWbXy5KOZ",
+  "type": "single",
+  "explicit": false,
+  "slug": "50-ottenkov-rozovogo"
+ },
+ {
+  "title": "Балаган",
+  "spotify_id": "29iZM1xK1N3kAOI2w6QJxw",
+  "type": "single",
+  "explicit": false,
+  "slug": "balagan"
+ },
+ {
+  "title": "Жёлтая Тень",
+  "spotify_id": "6L93pMWuLXkNvzcijsJbuf",
+  "type": "single",
+  "explicit": false,
+  "slug": "zheltaya-ten"
+ },
+ {
+  "title": "Мальчик хочет в Тамбов, а девочка в Дубай (Dance Remix)",
+  "spotify_id": "0nq13s0nNP7UrZ0QIGBwxs",
+  "type": "remix",
+  "explicit": false,
+  "slug": "malchik-hochet-v-tambov-a-devochka-v-dubay-dance-remix"
+ },
+ {
+  "title": "Сияй",
+  "spotify_id": "3hef8dNSHKStXZuSNCfF0f",
+  "type": "single",
+  "explicit": false,
+  "slug": "siyay"
+ },
+ {
+  "title": "На губах клубничный дым",
+  "spotify_id": "609Kc3ogMA2XQosKesSlxj",
+  "type": "single",
+  "explicit": true,
+  "slug": "na-gubah-klubnichnyy-dym"
+ },
+ {
+  "title": "Не вместе",
+  "spotify_id": "2uxpebhlbxmQC1l5mI0tQG",
+  "type": "single",
+  "explicit": false,
+  "slug": "ne-vmeste"
+ },
+ {
+  "title": "Никому тебя не отдам",
+  "spotify_id": "13cd3CU6ThuWwiFrLI0ZlV",
+  "type": "single",
+  "explicit": false,
+  "slug": "nikomu-tebya-ne-otdam"
+ },
+ {
+  "title": "Дым-туман",
+  "spotify_id": "3Fm4jhKGjPIfCF3Ql2g3ER",
+  "type": "single",
+  "explicit": false,
+  "slug": "dym-tuman"
+ },
+ {
+  "title": "Вера",
+  "spotify_id": "2GIamVVwyJtquDG8miPtaq",
+  "type": "single",
+  "explicit": false,
+  "slug": "vera"
+ },
+ {
+  "title": "Давай-давай",
+  "spotify_id": "1HFPoKyNBZnTPCkADNVzR1",
+  "type": "single",
+  "explicit": false,
+  "slug": "davay-davay"
+ },
+ {
+  "title": "Караван: Хроника одного пути",
+  "spotify_id": "0XOiYmzZ0Aori737dczEki",
+  "type": "album",
+  "explicit": false,
+  "slug": "karavan-hronika-odnogo-puti"
+ },
+ {
+  "title": "Держись, братан, держись",
+  "spotify_id": "44yE844qo4mZWDjp8FyJu5",
+  "type": "single",
+  "explicit": true,
+  "slug": "derzhis-bratan-derzhis"
+ },
+ {
+  "title": "Её Глаза Манили",
+  "spotify_id": "7GUrtnI23aTI43Sz43FaoT",
+  "type": "single",
+  "explicit": true,
+  "slug": "ee-glaza-manili"
+ },
+ {
+  "title": "Тьмы Вуаль",
+  "spotify_id": "03OsvBgEqJjWLAsgf1zrlp",
+  "type": "single",
+  "explicit": false,
+  "slug": "tmy-vual"
+ },
+ {
+  "title": "Улетам на юга",
+  "spotify_id": "52ejbRu5abbjrxWtlwR2wu",
+  "type": "single",
+  "explicit": false,
+  "slug": "uletam-na-yuga"
+ },
+ {
+  "title": "Тойские Частушки",
+  "spotify_id": "7m2Avr4Nf43lK3RP7YsZhs",
+  "type": "single",
+  "explicit": false,
+  "slug": "toyskie-chastushki"
+ },
+ {
+  "title": "Дикая Магия",
+  "spotify_id": "61xyEibkOZMlvI6KcIcRqO",
+  "type": "single",
+  "explicit": false,
+  "slug": "dikaya-magiya"
+ },
+ {
+  "title": "Шумели Степные Ветра",
+  "spotify_id": "4G3ART9iJ1wMuA8zwe3KYy",
+  "type": "single",
+  "explicit": false,
+  "slug": "shumeli-stepnye-vetra"
+ },
+ {
+  "title": "Лети, мой Урал",
+  "spotify_id": "4yAJneVi89K2YuCHxjoPWx",
+  "type": "single",
+  "explicit": false,
+  "slug": "leti-moy-ural"
+ },
+ {
+  "title": "Эта Лунная Ночь",
+  "spotify_id": "6upCZsNGaOC9uCkz0tuhjo",
+  "type": "single",
+  "explicit": false,
+  "slug": "eta-lunnaya-noch"
+ },
+ {
+  "title": "А я сяду в Жигули",
+  "spotify_id": "2j1JuwoyYfAMfZTK9lyBie",
+  "type": "single",
+  "explicit": false,
+  "slug": "a-ya-syadu-v-zhiguli"
+ },
+ {
+  "title": "Давай Улетим",
+  "spotify_id": "5yDZbptKQPYeIA4wRjBSO4",
+  "type": "single",
+  "explicit": false,
+  "slug": "davay-uletim"
+ },
+ {
+  "title": "Ночь Только Для Нас",
+  "spotify_id": "7AF3TsmuBDDXgSzQPjkkhx",
+  "type": "single",
+  "explicit": false,
+  "slug": "noch-tolko-dlya-nas"
+ },
+ {
+  "title": "Ты Полюбила Пацана (feat. ARMATURA)",
+  "spotify_id": "4bKJh433LPeYT5Bladd2N8",
+  "type": "single",
+  "explicit": false,
+  "slug": "ty-polyubila-patsana-feat-armatura"
+ },
+ {
+  "title": "Мост над Ишимом (Целиноград - Астана)",
+  "spotify_id": "40oXeaSpTAEgpfu8EvC0BW",
+  "type": "single",
+  "explicit": false,
+  "slug": "most-nad-ishimom-tselinograd-astana"
+ },
+ {
+  "title": "Ingush Lezginka (Phonk Trap remix)",
+  "spotify_id": "3y8gZ5AOzfFEGnoYLUTIwk",
+  "type": "remix",
+  "explicit": false,
+  "slug": "ingush-lezginka-phonk-trap-remix"
+ },
+ {
+  "title": "Пульс Бескрайней Степи",
+  "spotify_id": "2wc9U9l8z3NmJ2ex23Z2lz",
+  "type": "single",
+  "explicit": false,
+  "slug": "puls-beskrayney-stepi"
+ },
+ {
+  "title": "Эхо Разбитых Зеркал",
+  "spotify_id": "7jU2pgGdVY9VAbeVzfWaI5",
+  "type": "single",
+  "explicit": false,
+  "slug": "eho-razbityh-zerkal"
+ },
+ {
+  "title": "Арлан (степной волк)",
+  "spotify_id": "3oNK5CvZtqaqWC3JnBkeDu",
+  "type": "single",
+  "explicit": false,
+  "slug": "arlan-stepnoy-volk"
+ },
+ {
+  "title": "Потерянный Рай",
+  "spotify_id": "6qO75VURlGYesX6HTcn5Xg",
+  "type": "single",
+  "explicit": false,
+  "slug": "poteryannyy-ray"
+ },
+ {
+  "title": "Тас Жүрек (Каменное сердце)",
+  "spotify_id": "3fL2WXFw7bN19DauRuWlEL",
+  "type": "single",
+  "explicit": false,
+  "slug": "tas-zhurek-kamennoe-serdtse"
+ },
+ {
+  "title": "Steppe Wolf",
+  "spotify_id": "1JNkhmODjiIaFXzpRn1djH",
+  "type": "single",
+  "explicit": true,
+  "slug": "steppe-wolf"
+ },
+ {
+  "title": "Ритм Степи",
+  "spotify_id": "4GMzEr8PJwt7GP8Hj5DNM5",
+  "type": "single",
+  "explicit": false,
+  "slug": "ritm-stepi"
+ },
+ {
+  "title": "Последний Звонок",
+  "spotify_id": "1GfDwWkMIMWLaDxQzJuMsR",
+  "type": "single",
+  "explicit": false,
+  "slug": "posledniy-zvonok"
+ },
+ {
+  "title": "Ритм Движения",
+  "spotify_id": "7xZv2MEJluQOstJUr65w0g",
+  "type": "single",
+  "explicit": false,
+  "slug": "ritm-dvizheniya"
+ },
+ {
+  "title": "Дерзкая Казашка",
+  "spotify_id": "7oK9i23rWHtH4X3ZWXF9R2",
+  "type": "single",
+  "explicit": false,
+  "slug": "derzkaya-kazashka"
+ },
+ {
+  "title": "Сказка о Султане",
+  "spotify_id": "3SfPfnUb7ScaOUtSj1op5E",
+  "type": "single",
+  "explicit": false,
+  "slug": "skazka-o-sultane"
+ },
+ {
+  "title": "Көксерек (Серый Лютый)",
+  "spotify_id": "4xd1d8SlH9suqNTdeXP4rd",
+  "type": "single",
+  "explicit": false,
+  "slug": "kokserek-seryy-lyutyy"
+ },
+ {
+  "title": "За Казахстан",
+  "spotify_id": "4aWFXKYzku0AB3Hak0hRCC",
+  "type": "single",
+  "explicit": false,
+  "slug": "za-kazahstan"
+ },
+ {
+  "title": "Легенда о Баян Сулу и Козы Корпеш",
+  "spotify_id": "5EeZ5tICY6Yivv0yqRp8cK",
+  "type": "single",
+  "explicit": false,
+  "slug": "legenda-o-bayan-sulu-i-kozy-korpesh"
+ },
+ {
+  "title": "Мальчик хочет в Тамбов, а девочка в Дубай",
+  "spotify_id": "31TyLmQV6EFpvtVvOZtVHj",
+  "type": "single",
+  "explicit": false,
+  "slug": "malchik-hochet-v-tambov-a-devochka-v-dubay"
+ },
+ {
+  "title": "Теремок (Современная сказка для взрослых)",
+  "spotify_id": "1iqyPMcc0j8GTSfiUq4ldO",
+  "type": "single",
+  "explicit": false,
+  "slug": "teremok-sovremennaya-skazka-dlya-vzroslyh"
+ },
+ {
+  "title": "Казахстану шлём салам",
+  "spotify_id": "6SBlp8nBWtyanBBViW3292",
+  "type": "single",
+  "explicit": false,
+  "slug": "kazahstanu-shlem-salam"
+ },
+ {
+  "title": "Kazakh Lezginka 2",
+  "spotify_id": "11saFvVoEbbsBjjINKYvmR",
+  "type": "single",
+  "explicit": false,
+  "slug": "kazakh-lezginka-2"
+ },
+ {
+  "title": "Просто Рядом Будь",
+  "spotify_id": "7xQoGOLJ3EXXyjwnjnJRyA",
+  "type": "single",
+  "explicit": false,
+  "slug": "prosto-ryadom-bud"
+ },
+ {
+  "title": "Дикий Кураж",
+  "spotify_id": "2fPqSlrWXFigEe3h2E137k",
+  "type": "single",
+  "explicit": false,
+  "slug": "dikiy-kurazh"
+ },
+ {
+  "title": "Забывая про Суету",
+  "spotify_id": "5woH8kik1NrG1opBktRvuc",
+  "type": "single",
+  "explicit": false,
+  "slug": "zabyvaya-pro-suetu"
+ },
+ {
+  "title": "Дикая Фаза",
+  "spotify_id": "6WCBEbFIzibgJwB8yvDxEG",
+  "type": "single",
+  "explicit": false,
+  "slug": "dikaya-faza"
+ },
+ {
+  "title": "Лови вайб",
+  "spotify_id": "2uIsqvIhoxq7dxqEJxFMSf",
+  "type": "single",
+  "explicit": false,
+  "slug": "lovi-vayb"
+ },
+ {
+  "title": "Район дышит",
+  "spotify_id": "3aThS0vXvrrODjY4X9Vjmk",
+  "type": "single",
+  "explicit": false,
+  "slug": "rayon-dyshit"
+ },
+ {
+  "title": "Qazaqski Style",
+  "spotify_id": "3irC2jfFhWEn3Agp7907Ov",
+  "type": "album",
+  "explicit": false,
+  "slug": "qazaqski-style"
+ },
+ {
+  "title": "Mortal Kombat",
+  "spotify_id": "3GdeHrckoGNhUyk4pEulq9",
+  "type": "single",
+  "explicit": false,
+  "slug": "mortal-kombat"
+ },
+ {
+  "title": "Ночной Дуэт",
+  "spotify_id": "2Nvln6Z5F13MpPtNsO54jf",
+  "type": "single",
+  "explicit": false,
+  "slug": "nochnoy-duet"
+ },
+ {
+  "title": "Broken Paradise",
+  "spotify_id": "3ieugerSrggxdO8aIficSQ",
+  "type": "album",
+  "explicit": false,
+  "slug": "broken-paradise"
+ },
+ {
+  "title": "Топи до талого",
+  "spotify_id": "0Tffh1t8kZpLJ87JzrEUCK",
+  "type": "single",
+  "explicit": false,
+  "slug": "topi-do-talogo"
+ },
+ {
+  "title": "Ровный Ход",
+  "spotify_id": "0vhCrGVtiBXIEttvACDOAl",
+  "type": "single",
+  "explicit": false,
+  "slug": "rovnyy-hod"
+ },
+ {
+  "title": "Сельская дискотека (дед Виталик)",
+  "spotify_id": "2EDYM7RJFX5qn40u9KDNZv",
+  "type": "single",
+  "explicit": false,
+  "slug": "selskaya-diskoteka-ded-vitalik"
+ },
+ {
+  "title": "На Стыке Миров (Казахстан - Германия)",
+  "spotify_id": "4jUGwX784jKZVE2aZR2jPf",
+  "type": "single",
+  "explicit": false,
+  "slug": "na-styke-mirov-kazahstan-germaniya"
+ },
+ {
+  "title": "Время - Гепард",
+  "spotify_id": "2iBFaC0OPawE9JsVNqf9y8",
+  "type": "single",
+  "explicit": false,
+  "slug": "vremya-gepard"
+ },
+ {
+  "title": "Голос Степи",
+  "spotify_id": "2ISW6Oze3sc4Zkzcerq3OJ",
+  "type": "single",
+  "explicit": false,
+  "slug": "golos-stepi"
+ },
+ {
+  "title": "Самолёт",
+  "spotify_id": "2FoBYR4vJnBoJccsNMNQh8",
+  "type": "single",
+  "explicit": false,
+  "slug": "samolet"
+ },
+ {
+  "title": "Синий свет",
+  "spotify_id": "0MOE0xBiNksrSudCkkqaVa",
+  "type": "single",
+  "explicit": false,
+  "slug": "siniy-svet"
+ },
+ {
+  "title": "Кодекс Степи",
+  "spotify_id": "7ntEjJL6G6FYs0GZKy8BNt",
+  "type": "single",
+  "explicit": false,
+  "slug": "kodeks-stepi"
+ },
+ {
+  "title": "Точка опоры",
+  "spotify_id": "7fx5lEMr3GLJmfvDSVgXO3",
+  "type": "single",
+  "explicit": false,
+  "slug": "tochka-opory"
+ },
+ {
+  "title": "Чёрные Глаза",
+  "spotify_id": "69AbpY7PANFZ1jX2mJ013H",
+  "type": "single",
+  "explicit": false,
+  "slug": "chernye-glaza"
+ },
+ {
+  "title": "Свободный Ветер",
+  "spotify_id": "0sVOqmNJK43465imQgrqq7",
+  "type": "single",
+  "explicit": false,
+  "slug": "svobodnyy-veter"
+ },
+ {
+  "title": "Астана - Край Света",
+  "spotify_id": "4S0ivBsdTbreBvWlgErwUv",
+  "type": "single",
+  "explicit": false,
+  "slug": "astana-kray-sveta"
+ },
+ {
+  "title": "Девочка - Пламя",
+  "spotify_id": "0YGhnrFGitmP0DS1yCtX9p",
+  "type": "single",
+  "explicit": false,
+  "slug": "devochka-plamya"
+ },
+ {
+  "title": "Коргалжын - Край Тысячи Озёр",
+  "spotify_id": "2MwbuWaulaW64mVXdRbtGw",
+  "type": "single",
+  "explicit": false,
+  "slug": "korgalzhyn-kray-tysyachi-ozer"
+ },
+ {
+  "title": "Горный Край - Бурабай",
+  "spotify_id": "0YbfUiLndqGOKcC19OHcU3",
+  "type": "single",
+  "explicit": false,
+  "slug": "gornyy-kray-burabay"
+ },
+ {
+  "title": "Вольный край",
+  "spotify_id": "5xkrbHHAJ7wlyVdpL0dyYI",
+  "type": "single",
+  "explicit": false,
+  "slug": "volnyy-kray"
+ }
+]
