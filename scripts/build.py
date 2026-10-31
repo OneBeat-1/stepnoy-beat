@@ -10,7 +10,7 @@ import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PUB = ROOT / "public"
-SITE = "https://stepnoybeat.netlify.app"
+SITE = "https://stepnoybeat.vercel.app"
 YT_MUSIC = "https://music.youtube.com/channel/UCalKSJoSqgctoS0PxJ67yhQ"
 RELEASE_TYPE = {"single": "SingleRelease", "remix": "SingleRelease", "album": "AlbumRelease"}
 
@@ -114,7 +114,7 @@ def top(lang, other_href):
 """
 
 
-FOOT = """<footer><a href="{home}">stepnoybeat.netlify.app</a><span>© 2026 Степной Beat</span></footer>
+FOOT = """<footer><a href="{home}">stepnoybeat.vercel.app</a><span>© 2026 Степной Beat</span></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="/assets/release.js" defer></script>
 <script src="/assets/t.js" defer></script>
@@ -247,8 +247,8 @@ desc_en = "Stepnoy Beat — melodic rap, atmospheric hip-hop, club music and a 9
 e = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{desc_en}">', e, count=1)
 e = re.sub(r'<meta property="og:description" content="[^"]*">',
            '<meta property="og:description" content="Melodic rap, atmospheric hip-hop, club music and a 90s vibe. Listen on YouTube, Spotify, Apple Music and more.">', e, count=1)
-e = e.replace('<link rel="canonical" href="https://stepnoybeat.netlify.app/">', '<link rel="canonical" href="https://stepnoybeat.netlify.app/en/">', 1)
-e = e.replace('<meta property="og:url" content="https://stepnoybeat.netlify.app/">', '<meta property="og:url" content="https://stepnoybeat.netlify.app/en/">', 1)
+e = e.replace('<link rel="canonical" href="https://stepnoybeat.vercel.app/">', '<link rel="canonical" href="https://stepnoybeat.vercel.app/en/">', 1)
+e = e.replace('<meta property="og:url" content="https://stepnoybeat.vercel.app/">', '<meta property="og:url" content="https://stepnoybeat.vercel.app/en/">', 1)
 e = e.replace('<meta property="og:locale" content="ru_RU">', '<meta property="og:locale" content="en_US">', 1)
 e = re.sub(r'(<(\w+)\b[^>]*\bdata-i18n="(\w+)"[^>]*>)[^<]*(</\2>)', lambda m: m.group(1) + esc(EN.get(m.group(3), "")) + m.group(4) if m.group(3) in EN else m.group(0), e)
 e = re.sub(r'placeholder="[^"]*"( data-i18n-ph="(\w+)")', lambda m: f'placeholder="{esc(EN[m.group(2)])}"' + m.group(1), e)

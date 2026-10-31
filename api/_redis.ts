@@ -1,3 +1,4 @@
+declare const process: { env: Record<string, string | undefined> }
 // Мини-клиент Redis (Upstash) через REST: без зависимостей.
 // Переменные окружения появляются автоматически после подключения Redis к проекту Vercel.
 const URL_ = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || ""

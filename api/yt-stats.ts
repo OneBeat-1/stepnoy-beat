@@ -1,3 +1,4 @@
+declare const process: { env: Record<string, string | undefined> }
 // Цифры канала «Степной Beat» на YouTube: подписчики, просмотры, количество видео.
 // Ключ YouTube Data API хранится в переменной окружения YOUTUBE_API_KEY и на страницу не попадает.
 const HANDLE = "@stepnoybeat"
